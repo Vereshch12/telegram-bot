@@ -5,20 +5,20 @@ import javax.persistence.*;
 import java.time.LocalDateTime;
 
 @Entity
-@Table(name = "Notification_tasks")
+@Table(name = "all_tasks")
 public class NotificationTask {
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
-    @Column(name = "user_id")
+    @Column(name = "user_id", nullable = false)
     private long userId;
 
-    @Column(name = "message")
+    @Column(name = "message", nullable = false)
     private String message;
 
-    @Column(name = "date_time")
+    @Column(name = "date_time", nullable = false)
     private LocalDateTime dateTime;
 
     public long getId() {
